@@ -1,0 +1,12 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  width: 528px;
+  background-color: var(--white-color);
+  margin: 100px auto;
+  padding: 40px;
+}

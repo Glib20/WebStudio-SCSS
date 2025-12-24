@@ -1,0 +1,22 @@
+.features {
+  padding: 94px 0;
+}
+
+.features-list {
+  display: flex;
+  gap: 30px;
+}
+
+.features-item {
+  flex-basis: calc((100% - 90px) / 4);
+}
+
+.features-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.features-text {
+  color: var(--secondary-color);
+}

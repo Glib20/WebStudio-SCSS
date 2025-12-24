@@ -1,0 +1,8 @@
+.clients {
+  padding: 94px 0;
+}
+
+.clients-list {
+  display: flex;
+  gap: 30px;
+}
