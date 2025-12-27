@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+
+  &-logo {
+    font-family: $font-logo;
+    font-size: 26px;
+    font-weight: 900;
+    color: $color-black;
+
+    &-span {
+      color: $color-blue;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    gap: 30px;
+
+    &-link {
+      position: relative;
+      font-weight: 500;
+      color: $color-dark;
+      padding-bottom: 4px;
+      transition: color $duration $timing;
+
+      &:hover {
+        color: $color-blue;
+      }
+
+      &.current {
+        color: $color-blue;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background-color: $color-blue;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+
+  &-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    a {
+      color: $color-gray;
+      transition: color $duration $timing;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+}
