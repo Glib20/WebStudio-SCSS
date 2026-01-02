@@ -1,0 +1,95 @@
+.portfolio {
+  font-family: $font-main;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 700;
+    color: $color-text-main;
+  }
+
+  &__filters {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  &__filter-btn {
+    padding: 10px 24px;
+    background-color: $color-bg-light;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color $transition-time $transition-func,
+                color $transition-time $transition-func,
+                box-shadow $transition-time $transition-func;
+
+    &:hover,
+    &--active {
+      background-color: $color-primary;
+      color: $color-white;
+      box-shadow: 0 3px 6px rgba(0,0,0,.15);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  &__item {
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow $transition-time $transition-func;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+
+      .portfolio__overlay {
+        transform: translateY(0);
+      }
+
+      .portfolio__image {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__thumb {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    transition: transform $transition-time $transition-func;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(33,150,243,.9);
+    color: $color-white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform $transition-time $transition-func;
+  }
+
+  &__item-title {
+    font-size: 18px;
+    padding: 10px 16px 0;
+  }
+
+  &__item-text {
+    font-size: 14px;
+    color: $color-text-secondary;
+    padding: 0 16px 12px;
+  }
+}
+

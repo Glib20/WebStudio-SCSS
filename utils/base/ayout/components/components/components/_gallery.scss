@@ -1,0 +1,44 @@
+.portfolio-gallery {
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  &-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow $duration $timing;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+
+      .overlay {
+        transform: translateY(0);
+      }
+
+      .portfolio-gallery-img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &-img {
+    width: 100%;
+    display: block;
+    transition: transform $duration $timing;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(33, 150, 243, .9);
+  color: $color-white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform $duration $timing;
+}

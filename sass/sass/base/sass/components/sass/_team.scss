@@ -1,0 +1,15 @@
+.team {
+  background-color: #f5f4fa;
+  padding: 94px 0;
+}
+
+.team-list {
+  display: flex;
+  gap: 30px;
+}
+
+.team-item {
+  background-color: var(--white-color);
+  text-align: center;
+  padding: 30px;
+}

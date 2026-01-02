@@ -1,0 +1,23 @@
+@mixin transition($props...) {
+  transition: $props $transition-time $transition-func;
+}
+
+@mixin font($size, $weight: 400, $color: $color-dark) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin hover-color($color) {
+  &:hover,
+  &:focus {
+    color: $color;
+  }
+}
+
+@mixin hover-bg($bg) {
+  &:hover,
+  &:focus {
+    background-color: $bg;
+  }
+}

@@ -1,0 +1,38 @@
+.header {
+  border-bottom: 1px solid $color-border;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-family: $font-logo;
+    font-size: 26px;
+    font-weight: 700;
+    color: $color-accent;
+
+    &-accent {
+      color: $color-main;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+
+  &__link {
+    color: $color-main;
+    font-weight: 500;
+
+    &--active {
+      color: $color-accent;
+    }
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}

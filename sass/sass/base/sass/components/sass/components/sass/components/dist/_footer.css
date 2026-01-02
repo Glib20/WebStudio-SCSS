@@ -1,0 +1,9 @@
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--white-color);
+  padding: 60px 0;
+}
+
+.footer .logo {
+  color: var(--white-color);
+}

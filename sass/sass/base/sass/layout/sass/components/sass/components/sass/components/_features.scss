@@ -1,0 +1,22 @@
+.features {
+  padding: 94px 0;
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__item {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    color: $color-secondary;
+  }
+}

@@ -1,0 +1,40 @@
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%section-padding {
+  padding: $section-padding 0;
+}
+
+%section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+%button {
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: $font-main;
+}
+
+%card {
+  background-color: $color-white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+%icon {
+  width: 20px;
+  height: 20px;
+  fill: $color-gray;
+}
