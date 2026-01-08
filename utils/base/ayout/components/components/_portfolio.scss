@@ -1,95 +1,112 @@
 .portfolio {
-  font-family: $font-main;
+  padding: 60px 0;
+}
 
-  &__title {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 28px;
-    font-weight: 700;
-    color: $color-text-main;
-  }
+/* FILTERS */
+.portfolio__filters {
+  @include flex-center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
 
-  &__filters {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 30px;
-  }
+.portfolio__filter-btn {
+  @extend %button-reset;
+  padding: 6px 22px;
+  background-color: $color-bg-light;
+  border-radius: 4px;
+  font-size: 14px;
+  @include transition(background-color, color);
 
-  &__filter-btn {
-    padding: 10px 24px;
-    background-color: $color-bg-light;
-    border: none;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color $transition-time $transition-func,
-                color $transition-time $transition-func,
-                box-shadow $transition-time $transition-func;
-
-    &:hover,
-    &--active {
-      background-color: $color-primary;
-      color: $color-white;
-      box-shadow: 0 3px 6px rgba(0,0,0,.15);
-    }
-  }
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-
-  &__item {
-    border: 1px solid $color-border;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: box-shadow $transition-time $transition-func;
-
-    &:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,.12);
-
-      .portfolio__overlay {
-        transform: translateY(0);
-      }
-
-      .portfolio__image {
-        transform: scale(1.05);
-      }
-    }
-  }
-
-  &__thumb {
-    position: relative;
-    overflow: hidden;
-  }
-
-  &__image {
-    width: 100%;
-    display: block;
-    transition: transform $transition-time $transition-func;
-  }
-
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(33,150,243,.9);
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
     color: $color-white;
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform $transition-time $transition-func;
-  }
-
-  &__item-title {
-    font-size: 18px;
-    padding: 10px 16px 0;
-  }
-
-  &__item-text {
-    font-size: 14px;
-    color: $color-text-secondary;
-    padding: 0 16px 12px;
   }
 }
 
+/* LIST */
+.portfolio__list {
+  @extend %list-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* CARD */
+.portfolio__item {
+  border: 1px solid #eee;
+  background-color: $color-white;
+  @include transition(box-shadow);
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+}
+
+.portfolio__thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(33,150,243,0.9);
+  color: $color-white;
+  padding: 20px;
+  transform: translateY(100%);
+  @include transition(transform);
+}
+
+.portfolio__item:hover &__overlay {
+  transform: translateY(0);
+}
+
+.portfolio__content {
+  padding: 20px;
+}
+
+.portfolio__title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.portfolio__category {
+  font-size: 14px;
+  color: $color-gray;
+}
+
+/* ===== BREAKPOINT 480px ===== */
+@media (min-width: 480px) {
+  .portfolio__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .portfolio__item {
+    flex: 1 1 calc(50% - 30px);
+  }
+}
+
+/* ===== BREAKPOINT 768px ===== */
+@media (min-width: 768px) {
+  .portfolio {
+    padding: 94px 0;
+  }
+
+  .portfolio__filters {
+    justify-content: center;
+  }
+
+  .portfolio__item {
+    flex: 1 1 calc(33.333% - 30px);
+  }
+}
+
+/* ===== BREAKPOINT 1200px ===== */
+@media (min-width: 1200px) {
+  .portfolio__item {
+    flex: 1 1 calc(25% - 30px);
+  }
+}
