@@ -1,15 +1,28 @@
 .team {
-  background-color: #f5f4fa;
-  padding: 94px 0;
+  background-color: $color-light;
+  padding: 60px 0;
+
+  &__list {
+    @extend %list-reset;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 
-.team-list {
-  display: flex;
-  gap: 30px;
+@media (min-width: $bp-768) {
+  .team__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .team__item {
+    flex: 1 1 calc(50% - 30px);
+  }
 }
 
-.team-item {
-  background-color: var(--white-color);
-  text-align: center;
-  padding: 30px;
+@media (min-width: $bp-1200) {
+  .team__item {
+    flex: 1 1 calc(25% - 30px);
+  }
 }
