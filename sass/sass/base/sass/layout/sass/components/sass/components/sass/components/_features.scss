@@ -1,22 +1,27 @@
 .features {
-  padding: 94px 0;
+  padding: 60px 0;
 
   &__list {
+    @extend %list-reset;
     display: flex;
+    flex-direction: column;
     gap: 30px;
   }
+}
 
-  &__item {
-    flex: 1;
+@media (min-width: $bp-768) {
+  .features__list {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
-  &__title {
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  .features__item {
+    flex: 1 1 calc(50% - 30px);
   }
+}
 
-  &__text {
-    color: $color-secondary;
+@media (min-width: $bp-1200) {
+  .features__item {
+    flex: 1 1 calc(25% - 30px);
   }
 }
