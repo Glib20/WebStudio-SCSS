@@ -1,27 +1,25 @@
 .hero {
-  background-color: $color-dark-bg;
+  padding: 100px 0;
   text-align: center;
-  padding: 200px 0;
+  background: $color-bg-dark;
+  color: $color-white;
 
   &__title {
-    color: $color-white;
-    font-size: 44px;
-    font-weight: 900;
-    margin-bottom: 30px;
+    font-size: 26px;
+    margin-bottom: 20px;
   }
 
   &__button {
-    background-color: $color-accent;
+    @extend %button-reset;
+    background: $color-primary;
     color: $color-white;
-    border: none;
-    padding: 10px 32px;
+    padding: 12px 24px;
     border-radius: 4px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: darken($color-accent, 10%);
-    }
   }
 }
 
-
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 44px;
+  }
+}
